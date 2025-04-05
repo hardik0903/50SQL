@@ -38,7 +38,18 @@ I am following the [50 Day SQL Challenge](https://leetcode.com/studyplan/top-sql
 🔗 [Problem Link](https://leetcode.com/problems/recyclable-and-low-fat-products/description/?envType=study-plan-v2&envId=top-sql-50)
 
 **Description**:  
-Write a solution to find the ids of products that are both low fat and recyclable.
+Write a solution to find the IDs of products that are both low fat and recyclable.
+
+**Approach (PseudoCode):**
+
+1. Use a `SELECT` query to retrieve the required `product_id`.
+2. Add a `WHERE` clause to filter the rows.
+3. In the condition, check whether:
+   - `low_fats` column has value `'Y'`
+   - `recyclable` column also has value `'Y'`
+4. Return only those rows that meet both conditions.
+
+🧠 A simple problem to start with, testing your basic SQL filtering skills!
 
 ---
 
