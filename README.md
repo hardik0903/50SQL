@@ -17,6 +17,7 @@ Welcome to my journey of completing the **50 Day SQL Challenge**. This repositor
 - [Introduction](#introduction)
 - [Challenge Overview](#challenge-overview)
 - [Day 1: Recyclable and Low Fat Products](#day-1-recyclable-and-low-fat-products)
+- [Day 2: Find Customer Referee](#day-2-find-customer-referee)
 - [Conclusion](#conclusion)
 
 ---
@@ -50,6 +51,23 @@ Write a solution to find the IDs of products that are both low fat and recyclabl
 4. Return only those rows that meet both conditions.
 
 🧠 A simple problem to start with, testing your basic SQL filtering skills!
+
+---
+
+## Day 2: Find Customer Referee
+
+🔗 [Problem Link](https://leetcode.com/problems/find-customer-referee/?envType=study-plan-v2&envId=top-sql-50)
+
+**Description**:  
+Write a solution to find the names of customers who were **not referred by customer with ID = 2**.
+
+**Approach (PseudoCode):**
+
+1. Use a `SELECT` query to fetch the `name` column from the `Customer` table.
+2. Use a `WHERE` clause to exclude customers whose `referee_id` is 2.
+3. Consider handling `NULL` values for `referee_id` using `IS NULL` or with safe `!=` condition depending on the platform.
+
+🧠 This problem helps understand conditional filtering and dealing with `NULL` values in SQL.
 
 ---
 
