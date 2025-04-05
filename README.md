@@ -18,6 +18,7 @@ Welcome to my journey of completing the **50 Day SQL Challenge**. This repositor
 - [Challenge Overview](#challenge-overview)
 - [Day 1: Recyclable and Low Fat Products](#day-1-recyclable-and-low-fat-products)
 - [Day 2: Find Customer Referee](#day-2-find-customer-referee)
+- [Day 3: Big Countries](#day-3-big-countries)
 - [Conclusion](#conclusion)
 
 ---
@@ -68,6 +69,25 @@ Write a solution to find the names of customers who were **not referred by custo
 3. Consider handling `NULL` values for `referee_id` using `IS NULL` or with safe `!=` condition depending on the platform.
 
 🧠 This problem helps understand conditional filtering and dealing with `NULL` values in SQL.
+
+---
+
+## Day 3: Big Countries
+
+🔗 [Problem Link](https://leetcode.com/problems/big-countries/?envType=study-plan-v2&envId=top-sql-50)
+
+**Description**:  
+Write a solution to find the name, population, and area of **countries** that either have an area of at least **3 million** or a population of at least **25 million**.
+
+**Approach (PseudoCode):**
+
+1. Use a `SELECT` query to retrieve `name`, `population`, and `area` from the `World` table.
+2. In the `WHERE` clause, check for:
+   - `population >= 25000000`
+   - OR `area >= 3000000`
+3. Ensure both conditions are handled correctly using the logical OR (`OR`) operator.
+
+🧠 A good problem to practice logical conditions with multiple criteria in SQL!
 
 ---
 
