@@ -22,6 +22,9 @@ Welcome to my journey of completing the **50 Day SQL Challenge**. This repositor
   - [Day 4: Article Views I](#day-4-article-views-i)
   - [Day 5: Invalid Tweets](#day-5-invalid-tweets)
   - [Day 6: Replace Employee ID with Unique Identifier](#day-6-replace-employee-id-with-unique-identifier)
+  - [Day 7: Product Sales Analysis I](#day-7-product-sales-analysis-i)
+  - [Day 8: Customers Who Visited But Did Not Make Any Transactions](#day-8-customers-who-visited-but-did-not-make-any-transactions)
+  - [Day 9: Rising Temperature](#day-9-rising-temperature)
 - [Conclusion](#conclusion)
 
 ---
@@ -145,6 +148,57 @@ Write a solution to replace the employee IDs with a unique identifier.
 4. Ensure that the output preserves the integrity of the original data while replacing the IDs.
 
 🧠 This problem involves advanced SQL techniques including window functions and data transformation!
+
+---
+
+## Day 7: Product Sales Analysis I
+
+🔗 [Problem Link](https://leetcode.com/problems/product-sales-analysis-i/description/?envType=study-plan-v2&envId=top-sql-50)
+
+**Description:**  
+Write a solution to report the product_name, year, and price of each product sold.
+
+**Approach (PseudoCode):**
+
+1. Join the `Sales` table with the `Product` table using `product_id`.
+2. Select `product_name`, `year`, and `price`.
+3. Use `SELECT`, `JOIN`, and ensure proper column aliasing.
+
+🧠 Helps practice joins and multi-table queries.
+
+---
+
+## Day 8: Customers Who Visited But Did Not Make Any Transactions
+
+🔗 [Problem Link](https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/submissions/1599254254/?envType=study-plan-v2&envId=top-sql-50)
+
+**Description:**  
+Find the IDs and names of customers who visited but didn't make any transaction.
+
+**Approach (PseudoCode):**
+
+1. Use a `LEFT JOIN` between `Visits` and `Transactions` tables.
+2. Filter where `transaction_id IS NULL`.
+3. Select required fields (`customer_id`, `name`).
+
+🧠 A great example of using `LEFT JOIN` and filtering NULLs to detect missing links.
+
+---
+
+## Day 9: Rising Temperature
+
+🔗 [Problem Link](https://leetcode.com/problems/rising-temperature/?envType=study-plan-v2&envId=top-sql-50)
+
+**Description:**  
+Find all dates' IDs with temperatures higher than the previous day.
+
+**Approach (PseudoCode):**
+
+1. Use a self-join on the `Weather` table to compare temperature with previous date.
+2. Join `W1` and `W2` where `W1.recordDate = W2.recordDate + 1`.
+3. Check `W1.temperature > W2.temperature` and return `W1.id`.
+
+🧠 Practice with self-joins and date comparisons.
 
 ---
 
