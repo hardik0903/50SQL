@@ -25,6 +25,9 @@ Welcome to my journey of completing the **50 Day SQL Challenge**. This repositor
   - [Day 7: Product Sales Analysis I](#day-7-product-sales-analysis-i)
   - [Day 8: Customers Who Visited But Did Not Make Any Transactions](#day-8-customers-who-visited-but-did-not-make-any-transactions)
   - [Day 9: Rising Temperature](#day-9-rising-temperature)
+  - [Day 10: Average Time of Process per Machine](#day-10-average-time-of-process-per-machine)
+  - [Day 11: Employee Bonus](#day-11-employee-bonus)
+  - [Day 12: Students and Examinations](#day-12-students-and-examinations)
 - [Conclusion](#conclusion)
 
 ---
@@ -199,6 +202,61 @@ Find all dates' IDs with temperatures higher than the previous day.
 3. Check `W1.temperature > W2.temperature` and return `W1.id`.
 
 🧠 Practice with self-joins and date comparisons.
+
+---
+
+## Day 10: Average Time of Process per Machine
+
+🔗 [Problem Link](https://leetcode.com/problems/average-time-of-process-per-machine/submissions/1601383082/?envType=study-plan-v2&envId=top-sql-50)
+
+**Description:**  
+Calculate the average time each machine takes to complete a process. Only consider complete processes — i.e., those that have both a start and end log.
+
+**Approach (PseudoCode):**
+
+1. Join the `Activity` table with itself using the same `process_id` and `machine_id`.
+2. Filter such that one row is for start and the other for end.
+3. Compute the time difference using `end.timestamp - start.timestamp`.
+4. Group by `machine_id` and calculate `AVG()` of the time difference.
+
+🧠 Good exercise in self-joins and filtering using column values.
+
+---
+
+## Day 11: Employee Bonus
+
+🔗 [Problem Link](https://leetcode.com/problems/employee-bonus/submissions/1601391241/?envType=study-plan-v2&envId=top-sql-50)
+
+**Description:**  
+Find the names and bonuses of employees who received a bonus less than 1000 or no bonus at all.
+
+**Approach (PseudoCode):**
+
+1. Use a `LEFT JOIN` between `Employee` and `Bonus` on `empId`.
+2. Select `name` and `bonus` fields.
+3. Use `WHERE` clause to filter:
+   - `bonus < 1000`
+   - or `bonus IS NULL` (no bonus)
+
+🧠 Useful for understanding outer joins and NULL filtering.
+
+---
+
+## Day 12: Students and Examinations
+
+🔗 [Problem Link](https://leetcode.com/problems/students-and-examinations/submissions/1601397835/?envType=study-plan-v2&envId=top-sql-50)
+
+**Description:**  
+List how many times each student attempted each exam, even if it's 0.
+
+**Approach (PseudoCode):**
+
+1. Perform a `CROSS JOIN` between `Students` and `Subjects` to get all possible student-subject pairs.
+2. Use a `LEFT JOIN` with the `Examinations` table on `student_id` and `subject_name`.
+3. Use `COUNT()` with `GROUP BY student_id, subject_name` to count attempts.
+4. Order by `student_id` and `subject_name`.
+
+🧠 Strengthens skills in joins, grouping, and cartesian product simulation.
 
 ---
 
